@@ -9,6 +9,12 @@ import (
 	"time"
 )
 
+// TODO: Convert this to go-Swagger server and test via APIs
+// TODO: Add local storage(Mongo)
+// TODO: Test for respond API parameters
+// TODO: Add more TODOs
+// TODO: Solve all the TODOs
+
 // Job ...
 type Job func(ctx context.Context)
 
@@ -64,7 +70,8 @@ func main() {
 	worker.Add(ctx, task2, time.Second*10)
 
 	quit := make(chan os.Signal, 1)
-	signal.Notify(quit, os.Interrupt, os.Interrupt)
+	// We can send multiple Interrupts. I think we should send interrupts = go routines spunned up.
+	signal.Notify(quit, os.Interrupt)
 
 	<-quit
 	worker.Stop()
