@@ -9,9 +9,6 @@ import (
 	"time"
 )
 
-// TODO: Convert this to go-Swagger server and test via APIs
-// TODO: Add local storage(Mongo)
-// TODO: Test for respond API parameters
 // TODO: Add more TODOs
 // TODO: Solve all the TODOs
 
@@ -78,11 +75,11 @@ func main() {
 }
 
 func task1(ctx context.Context) {
-	time.Sleep(time.Second * 1)
+	// time.Sleep(time.Second * 1)
 	fmt.Printf("Task 1 done %s\n", time.Now().String())
 }
 
 func task2(ctx context.Context) {
-	time.Sleep(time.Second * 5)
+	// time.Sleep(time.Second * 1)
 	fmt.Printf("Task 2 done %s\n", time.Now().String())
 }
